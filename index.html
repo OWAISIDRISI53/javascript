@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<style>
+
+/* Created By Owais Idrisi */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+*{
+
+  padding: 0; margin: 0; box-sizing: border-box ;
+  font-family: 'Ubuntu', sans-serif;
+}
+.flex{
+   display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+body{
+
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg,#13F1FC,#0470DC);
+}
+
+
+.center{
+  border: 2px solid white;
+  width: 90vw ;
+  height: 300px;
+
+  border-radius: 20px;
+  background: linear-gradient(135deg,#F54EA2,#FF7676);
+}
+input{
+    font-size:13pt;
+    width:60px;
+   color:white; 
+   background-color: plum;
+   font-size:13px;
+   font-weight:bold;
+   width:100px;
+   padding:15px ;
+   text-align:center;
+   border-radius: 5px;
+    border: 2px solid #d2d2d2;
+    outline: none;
+}
+
+input:focus{
+    border: 2px solid #3164FF;
+}
+
+
+
+a{
+    display: block;
+    width: 330px;
+    background-color: black ;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 5px;
+    margin-top: 50px;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.25);
+            
+}</style>
+
+</head>
+
+<body class="flex" onload="addListeners()">
+  <div class="center flex">
+    <table border="0" align="center">
+      <tr>
+        <td align="right">Celsius: </td>
+        <td><input id="celsius" type="number" value="0" /></td>
+      </tr>
+      <tr>
+        <td align="right">Fahrenheit: </td>
+        <td><input id="far" type="number" value="32" /></td>
+      </tr>
+    </table>
+    
+  </div>
+<a href="https://www.sololearn.com/Profile/23076132/?ref=app" target="_blank">Follow Me</a>
+
+
+     
+     <script>
+
+// Created By Owais Idrisi
+
+alert("Best View In Small Devices")
+
+
+function addListeners() { document.getElementById("far").addEventListener("input",ToC);
+  document.getElementById("celsius").addEventListener("input",ToF);
+}
+
+function ToC() {
+  var f = parseFloat(document.getElementById('far').value);
+  var c = (f - 32) * (5 / 9);
+  document.getElementById('celsius').value = (c.toFixed(2));;
+}
+
+function ToF() {
+  var c = parseFloat(document.getElementById('celsius').value) ;
+  var f = (c * (9 / 5)) + 32;
+  document.getElementById('far').value = (f.toFixed(2));
+}
+
+
+</script>
+</body>
+
+</html>
